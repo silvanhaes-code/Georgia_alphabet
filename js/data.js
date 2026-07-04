@@ -1,0 +1,40 @@
+// The 33 letters of the modern Georgian alphabet (Mkhedruli).
+// name      – traditional Georgian name of the letter
+// latin     – common Latin transliteration (national system)
+// sound      – plain-English pronunciation hint
+// example   – a short Georgian word using the letter, with meaning
+const LETTERS = [
+  { char: "ა", name: "ani",    latin: "a",  sound: "a as in 'father'",              example: "ატამი", exampleLatin: "atami", meaning: "peach" },
+  { char: "ბ", name: "bani",   latin: "b",  sound: "b as in 'bat'",                 example: "ბაბუა", exampleLatin: "babua", meaning: "grandfather" },
+  { char: "გ", name: "gani",   latin: "g",  sound: "g as in 'go'",                  example: "გული",  exampleLatin: "guli",  meaning: "heart" },
+  { char: "დ", name: "doni",   latin: "d",  sound: "d as in 'dog'",                 example: "დედა",  exampleLatin: "deda",  meaning: "mother" },
+  { char: "ე", name: "eni",    latin: "e",  sound: "e as in 'bed'",                 example: "ერთი",  exampleLatin: "erti",  meaning: "one" },
+  { char: "ვ", name: "vini",   latin: "v",  sound: "v as in 'van'",                 example: "ვაშლი", exampleLatin: "vashli", meaning: "apple" },
+  { char: "ზ", name: "zeni",   latin: "z",  sound: "z as in 'zoo'",                 example: "ზამთარი", exampleLatin: "zamtari", meaning: "winter" },
+  { char: "თ", name: "tani",   latin: "t",  sound: "t as in 'top' (breathy)",       example: "თევზი", exampleLatin: "tevzi", meaning: "fish" },
+  { char: "ი", name: "ini",    latin: "i",  sound: "i as in 'machine'",             example: "ია",    exampleLatin: "ia",    meaning: "violet" },
+  { char: "კ", name: "k'ani",  latin: "k'", sound: "sharp, popped k (ejective)",    example: "კაცი",  exampleLatin: "k'atsi", meaning: "man" },
+  { char: "ლ", name: "lasi",   latin: "l",  sound: "l as in 'lamp'",                example: "ლომი",  exampleLatin: "lomi",  meaning: "lion" },
+  { char: "მ", name: "mani",   latin: "m",  sound: "m as in 'mom'",                 example: "მთა",   exampleLatin: "mta",   meaning: "mountain" },
+  { char: "ნ", name: "nari",   latin: "n",  sound: "n as in 'net'",                 example: "ნიორი", exampleLatin: "niori", meaning: "garlic" },
+  { char: "ო", name: "oni",    latin: "o",  sound: "o as in 'more'",                example: "ოქრო",  exampleLatin: "okro",  meaning: "gold" },
+  { char: "პ", name: "p'ari",  latin: "p'", sound: "sharp, popped p (ejective)",    example: "პური",  exampleLatin: "p'uri", meaning: "bread" },
+  { char: "ჟ", name: "zhani",  latin: "zh", sound: "s as in 'measure'",             example: "ჟამი",  exampleLatin: "zhami", meaning: "time/era" },
+  { char: "რ", name: "rae",    latin: "r",  sound: "rolled r",                      example: "რძე",   exampleLatin: "rdze",  meaning: "milk" },
+  { char: "ს", name: "sani",   latin: "s",  sound: "s as in 'sun'",                 example: "სახლი", exampleLatin: "sakhli", meaning: "house" },
+  { char: "ტ", name: "t'ari",  latin: "t'", sound: "sharp, popped t (ejective)",    example: "ტბა",   exampleLatin: "t'ba",  meaning: "lake" },
+  { char: "უ", name: "uni",    latin: "u",  sound: "u as in 'rule'",                example: "უფალი", exampleLatin: "upali", meaning: "lord" },
+  { char: "ფ", name: "pari",   latin: "p",  sound: "p as in 'pen' (breathy)",       example: "ფული",  exampleLatin: "puli",  meaning: "money" },
+  { char: "ქ", name: "kani",   latin: "k",  sound: "k as in 'kite' (breathy)",      example: "ქარი",  exampleLatin: "kari",  meaning: "wind" },
+  { char: "ღ", name: "ghani",  latin: "gh", sound: "like French guttural r",        example: "ღვინო", exampleLatin: "ghvino", meaning: "wine" },
+  { char: "ყ", name: "q'ari",  latin: "q'", sound: "deep, throaty popped k",        example: "ყავა",  exampleLatin: "q'ava", meaning: "coffee" },
+  { char: "შ", name: "shini",  latin: "sh", sound: "sh as in 'shoe'",               example: "შაქარი", exampleLatin: "shakari", meaning: "sugar" },
+  { char: "ჩ", name: "chini",  latin: "ch", sound: "ch as in 'chair' (breathy)",    example: "ჩაი",   exampleLatin: "chai",  meaning: "tea" },
+  { char: "ც", name: "tsani",  latin: "ts", sound: "ts as in 'cats' (breathy)",     example: "ცა",    exampleLatin: "tsa",   meaning: "sky" },
+  { char: "ძ", name: "dzili",  latin: "dz", sound: "ds as in 'adds'",               example: "ძაღლი", exampleLatin: "dzaghli", meaning: "dog" },
+  { char: "წ", name: "ts'ili", latin: "ts'", sound: "sharp, popped ts (ejective)",  example: "წყალი", exampleLatin: "ts'q'ali", meaning: "water" },
+  { char: "ჭ", name: "ch'ari", latin: "ch'", sound: "sharp, popped ch (ejective)",  example: "ჭიქა",  exampleLatin: "ch'ika", meaning: "glass" },
+  { char: "ხ", name: "khani",  latin: "kh", sound: "ch as in Scottish 'loch'",      example: "ხე",    exampleLatin: "khe",   meaning: "tree" },
+  { char: "ჯ", name: "jani",   latin: "j",  sound: "j as in 'jam'",                 example: "ჯარი",  exampleLatin: "jari",  meaning: "army" },
+  { char: "ჰ", name: "hae",    latin: "h",  sound: "h as in 'hat'",                 example: "ჰაერი", exampleLatin: "haeri", meaning: "air" },
+];

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>ქართული — Learn the Georgian Alphabet</title>
+  <meta name="description" content="Learn the 33 letters of the Georgian alphabet with flashcards and quizzes." />
+  <meta name="theme-color" content="#7b1e3b" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Georgian" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">ქართული ანბანი</h1>
+    <p class="app-subtitle">Learn the Georgian alphabet</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab is-active" data-view="learn" role="tab">Learn</button>
+    <button class="tab" data-view="browse" role="tab">Chart</button>
+    <button class="tab" data-view="quiz" role="tab">Quiz</button>
+  </nav>
+
+  <main id="app">
+    <!-- LEARN (flashcards) -->
+    <section id="view-learn" class="view is-active">
+      <div class="progress-bar"><div id="learn-progress" class="progress-fill"></div></div>
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-face flashcard-front">
+            <div class="big-letter" id="fc-char"></div>
+            <button class="speak-btn" id="fc-speak" aria-label="Play sound">🔊</button>
+            <p class="hint">Tap card to reveal</p>
+          </div>
+          <div class="flashcard-face flashcard-back">
+            <div class="letter-name" id="fc-name"></div>
+            <div class="latin" id="fc-latin"></div>
+            <div class="sound" id="fc-sound"></div>
+            <div class="example" id="fc-example"></div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="ctrl-btn" id="fc-prev">‹ Prev</button>
+        <span class="counter" id="fc-counter"></span>
+        <button class="ctrl-btn" id="fc-next">Next ›</button>
+      </div>
+    </section>
+
+    <!-- BROWSE (chart) -->
+    <section id="view-browse" class="view">
+      <div class="grid" id="letter-grid"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="view-quiz" class="view">
+      <div id="quiz-area">
+        <div class="quiz-score" id="quiz-score"></div>
+        <div class="quiz-prompt" id="quiz-prompt"></div>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <button class="ctrl-btn primary" id="quiz-next" hidden>Next question ›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail modal for the chart -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="big-letter" id="m-char"></div>
+      <button class="speak-btn" id="m-speak" aria-label="Play sound">🔊</button>
+      <div class="letter-name" id="m-name"></div>
+      <div class="latin" id="m-latin"></div>
+      <div class="sound" id="m-sound"></div>
+      <div class="example" id="m-example"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
