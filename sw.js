@@ -1,5 +1,7 @@
-// Simple offline cache for the Georgian alphabet PWA.
-const CACHE = "georgian-alphabet-v1";
+// Offline cache for the Georgian alphabet PWA.
+// Core shell is precached on install; audio clips are cached on first play
+// (runtime cache-first fill) so we don't hardcode 66 file paths here.
+const CACHE = "georgian-alphabet-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -29,6 +31,16 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then((cached) => cached || fetch(e.request))
+    caches.match(e.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(e.request).then((resp) => {
+        // Cache same-origin successful responses (e.g. audio clips) for offline.
+        if (resp && resp.ok && e.request.url.startsWith(self.location.origin)) {
+          const clone = resp.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, clone));
+        }
+        return resp;
+      }).catch(() => cached);
+    })
   );
 });

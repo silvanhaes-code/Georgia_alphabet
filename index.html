@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
   <title>ქართული — Learn the Georgian Alphabet</title>
-  <meta name="description" content="Learn the 33 letters of the Georgian alphabet with flashcards and quizzes." />
+  <meta name="description" content="Learn the 33 letters of the Georgian alphabet with flashcards, a chart, and a quiz game." />
   <meta name="theme-color" content="#7b1e3b" />
   <link rel="icon" href="icons/icon-192.png" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -21,15 +21,15 @@
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab is-active" data-view="learn" role="tab">Learn</button>
-    <button class="tab" data-view="browse" role="tab">Chart</button>
-    <button class="tab" data-view="quiz" role="tab">Quiz</button>
+    <button class="tab is-active" data-view="cards" role="tab">Cards</button>
+    <button class="tab" data-view="chart" role="tab">Chart</button>
+    <button class="tab" data-view="learn" role="tab">Learn</button>
   </nav>
 
   <main id="app">
-    <!-- LEARN (flashcards) -->
-    <section id="view-learn" class="view is-active">
-      <div class="progress-bar"><div id="learn-progress" class="progress-fill"></div></div>
+    <!-- CARDS (flashcards) -->
+    <section id="view-cards" class="view is-active">
+      <div class="progress-bar"><div id="fc-progress" class="progress-fill"></div></div>
       <div class="flashcard" id="flashcard">
         <div class="flashcard-inner">
           <div class="flashcard-face flashcard-front">
@@ -52,19 +52,31 @@
       </div>
     </section>
 
-    <!-- BROWSE (chart) -->
-    <section id="view-browse" class="view">
+    <!-- CHART -->
+    <section id="view-chart" class="view">
       <div class="grid" id="letter-grid"></div>
     </section>
 
-    <!-- QUIZ -->
-    <section id="view-quiz" class="view">
-      <div id="quiz-area">
+    <!-- LEARN (game) -->
+    <section id="view-learn" class="view">
+      <!-- Step 1: pick a set -->
+      <div id="learn-picker">
+        <p class="picker-intro">Pick a set to drill. You'll be quizzed on just those letters until you switch.</p>
+        <div class="set-list" id="set-list"></div>
+      </div>
+
+      <!-- Step 2: the game -->
+      <div id="learn-game" hidden>
+        <div class="game-bar">
+          <button class="back-btn" id="game-back">‹ Sets</button>
+          <span class="game-set" id="game-set-name"></span>
+          <span class="game-stats"><span id="game-streak">🔥 0</span> · <span id="game-best">Best 0</span></span>
+        </div>
         <div class="quiz-score" id="quiz-score"></div>
         <div class="quiz-prompt" id="quiz-prompt"></div>
         <div class="quiz-options" id="quiz-options"></div>
         <div class="quiz-feedback" id="quiz-feedback"></div>
-        <button class="ctrl-btn primary" id="quiz-next" hidden>Next question ›</button>
+        <button class="ctrl-btn primary" id="quiz-next" hidden>Next ›</button>
       </div>
     </section>
   </main>

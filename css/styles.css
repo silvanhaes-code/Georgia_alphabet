@@ -267,9 +267,74 @@ body {
   cursor: pointer;
   box-shadow: var(--shadow);
 }
+.quiz-opt.opt-glyph { font-size: 34px; }
 .quiz-opt.correct { border-color: var(--green); color: var(--green); }
 .quiz-opt.wrong { border-color: var(--red); color: var(--red); }
 .quiz-opt:disabled { cursor: default; }
 .quiz-feedback { text-align: center; font-size: 16px; min-height: 24px; margin-bottom: 10px; font-weight: 600; }
 .quiz-feedback.ok { color: var(--green); }
 .quiz-feedback.no { color: var(--red); }
+
+/* Learn — set picker */
+.picker-intro { color: var(--muted); font-size: 14px; text-align: center; margin: 4px 4px 16px; }
+.set-list { display: flex; flex-direction: column; gap: 12px; }
+.set-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .1s, border-color .2s;
+}
+.set-card:active { transform: scale(0.98); }
+.set-card .set-head { display: flex; justify-content: space-between; align-items: baseline; }
+.set-card .set-label { font-size: 18px; font-weight: 700; }
+.set-card .set-count { font-size: 13px; color: var(--muted); font-weight: 600; }
+.set-card .set-desc { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
+.set-card .set-letters {
+  font-size: 26px;
+  color: var(--wine);
+  letter-spacing: 6px;
+  line-height: 1.25;
+  word-break: break-word;
+}
+@media (prefers-color-scheme: dark) { .set-card .set-letters { color: var(--gold); } }
+.set-card.review { border-style: dashed; border-color: rgba(123,30,59,0.35); }
+.set-card.review .set-letters { font-size: 15px; letter-spacing: 0; color: var(--muted); }
+
+/* Learn — game bar */
+.game-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.back-btn {
+  border: none;
+  background: transparent;
+  color: var(--wine);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 2px;
+}
+@media (prefers-color-scheme: dark) { .back-btn { color: var(--gold); } }
+.game-set { font-weight: 700; font-size: 15px; text-align: center; flex: 1; }
+.game-stats { font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+/* Audio prompt (listen → pick letter) */
+.play-big {
+  border: none;
+  background: var(--wine);
+  color: #fff;
+  font-size: 40px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.play-big:active { transform: scale(0.95); }
+.replay-hint { color: var(--muted); font-size: 13px; margin-top: 10px; }
